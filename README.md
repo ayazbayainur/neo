@@ -1,7 +1,8 @@
 # neobis_
 Implementation of Neobis tasks
 
-![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fubiqum.com%2Fassets%2Fuploads%2F2021%2F12%2Flearn-java-with-ubiqum-logo.png&tbnid=qt1xQyXSEQHuTM&vet=12ahUKEwjX05yJ64SCAxWvGxAIHW20DnMQMygBegQIARBv..i&imgrefurl=https%3A%2F%2Fubiqum.com%2Fjava-coding%2F&docid=dGuvpa3K_KqLrM&w=4000&h=2500&q=java&client=safari&ved=2ahUKEwjX05yJ64SCAxWvGxAIHW20DnMQMygBegQIARBv)
+![Alt text](java_image.png)
+
 
 # Study plan:
 Week1
