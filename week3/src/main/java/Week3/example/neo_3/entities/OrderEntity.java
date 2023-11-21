@@ -18,7 +18,7 @@ public class OrderEntity {
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToOne(optional = true)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "user_id")
     private UserEntity userId;
     @Version

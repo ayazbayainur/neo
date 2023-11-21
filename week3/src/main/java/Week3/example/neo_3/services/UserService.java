@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 @Service
 @Data
 public class UserService {
-    @Autowired
     private UserRepository userRepository;
     public UserDto createUser (UserDto userDto){
         // Convert UserDto into User JPA Entity
@@ -44,9 +43,9 @@ public class UserService {
         return UserMapper.mapToUserDto(updatedUser);
     }
 
-    public UserDto updateUserStatus(UserDto user){
+    public UserDto updateUserRole(UserDto user){
         UserEntity existingUser = userRepository.findById((int) user.getId()).get();
-        existingUser.setStatus(user.getStatus());
+        existingUser.setRole(user.getRole());
         UserEntity updatedUser = userRepository.save(existingUser);
         return UserMapper.mapToUserDto(updatedUser);
     }

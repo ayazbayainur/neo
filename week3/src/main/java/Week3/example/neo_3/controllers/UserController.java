@@ -1,5 +1,6 @@
 package Week3.example.neo_3.controllers;
 
+import Week3.example.neo_3.dto.ProductDto;
 import Week3.example.neo_3.dto.UserDto;
 import Week3.example.neo_3.entities.UserEntity;
 import Week3.example.neo_3.repositories.UserRepository;
@@ -20,9 +21,9 @@ import javax.validation.Valid;
 import java.util.List;
 //import java.util.Optional;
 
+@RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RestController
 @RequestMapping("/api/users")
 public class UserController {
     private UserService userService;
@@ -45,11 +46,18 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable("id") Long userId,
+    @PutMapping("{name}")
+    public ResponseEntity<UserDto> updateUserName(@PathVariable("name") String userName, @RequestBody UserDto user){
+        user.setName(userName);
+        UserDto updatedUser = userService.updateUserUsername(user);
+        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PutMapping("{role}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable("role") String userRole,
                                               @RequestBody UserDto user){
-        user.setId(userId);
-        UserDto updatedUser = userService.updateUserStatus(user);
+        user.setRole(userRole);
+        UserDto updatedUser = userService.updateUserRole(user);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
 

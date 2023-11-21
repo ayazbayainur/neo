@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import lombok.*;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Table(name = "User")
 public class UserEntity {
 
@@ -27,7 +27,4 @@ public class UserEntity {
     private String password;
     @Column
     private String status;
-
-
-
 }
