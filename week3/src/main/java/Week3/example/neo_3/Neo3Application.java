@@ -11,6 +11,7 @@ import java.util.List;
 public class Neo3Application {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(Neo3Application.class, args);
 	}
 

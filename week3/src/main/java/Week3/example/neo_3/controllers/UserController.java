@@ -3,6 +3,7 @@ package Week3.example.neo_3.controllers;
 import Week3.example.neo_3.dto.ProductDto;
 import Week3.example.neo_3.dto.UserDto;
 import Week3.example.neo_3.entities.UserEntity;
+import Week3.example.neo_3.entities.enums.UserRole;
 import Week3.example.neo_3.repositories.UserRepository;
 import Week3.example.neo_3.repositories.OrderRepository;
 import Week3.example.neo_3.services.UserService;
@@ -54,7 +55,7 @@ public class UserController {
     }
 
     @PutMapping("{role}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable("role") String userRole,
+    public ResponseEntity<UserDto> updateUser(@PathVariable("role") UserRole userRole,
                                               @RequestBody UserDto user){
         user.setRole(userRole);
         UserDto updatedUser = userService.updateUserRole(user);
